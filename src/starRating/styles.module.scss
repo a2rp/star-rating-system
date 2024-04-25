@@ -1,0 +1,57 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.container {
+    // border: 1px solid #f00;
+    display: flex;
+    justify-content: center;
+
+    .main {
+        width: 100%;
+        max-width: 1400px;
+        padding: 30px;
+
+        .heading {
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        .starsContainer {
+            // border: 1px solid #f00;
+            margin-top: 30px;
+            align-items: center;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            height: 40px;
+
+            ul.starsList {
+                // border: 1px solid #f00;
+                list-style-type: none;
+                display: flex;
+
+                li {
+                    .star {
+                        font-size: 32px;
+                        // color: #f00;
+                    }
+                }
+            }
+
+            .ratingValue {
+                // border: 1px solid #f00;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-weight: 900;
+                font-size: 20px;
+            }
+        }
+    }
+}
