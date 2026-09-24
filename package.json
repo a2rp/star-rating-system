@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "star-rating-system",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npx --yes gh-pages -d build -b gh-pages"
+    "deploy": "npx --yes gh-pages -d build -b gh-pages",
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +39,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://a2rp.github.io/star-rating-system/"
 }

@@ -1,57 +1,79 @@
-*,
-::before,
-::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 12px;
+.ratingControl {
+    display: grid;
+    gap: 18px;
 }
 
-.container {
-    // border: 1px solid #f00;
+.starsList {
     display: flex;
-    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
 
-    .main {
-        width: 100%;
-        max-width: 1400px;
-        padding: 30px;
+.starButton,
+.activeStar {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        text-shadow 160ms ease;
+}
 
-        .heading {
-            font-size: 32px;
-            font-weight: 900;
-        }
+.starButton:hover,
+.starButton:focus-visible,
+.activeStar {
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 22px rgba(249, 190, 70, 0.22);
+    text-shadow: 0 0 14px rgba(249, 190, 70, 0.65);
+}
 
-        .starsContainer {
-            // border: 1px solid #f00;
-            margin-top: 30px;
-            align-items: center;
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            height: 40px;
+.starButton:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
 
-            ul.starsList {
-                // border: 1px solid #f00;
-                list-style-type: none;
-                display: flex;
+.starButton svg,
+.activeStar svg {
+    width: 20px;
+    height: 20px;
+}
 
-                li {
-                    .star {
-                        font-size: 32px;
-                        // color: #f00;
-                    }
-                }
-            }
+.ratingValue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+}
 
-            .ratingValue {
-                // border: 1px solid #f00;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                font-weight: 900;
-                font-size: 20px;
-            }
-        }
+.ratingValue strong {
+    color: var(--text);
+    font-size: 18px;
+}
+
+@media (max-width: 520px) {
+    .starsList {
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    .starButton,
+    .activeStar {
+        width: 44px;
+        height: 44px;
     }
 }
