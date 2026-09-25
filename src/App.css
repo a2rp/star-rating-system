@@ -381,3 +381,44 @@ h2 {
         justify-content: flex-start;
     }
 }
+.goTopButton {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    transition: border-color 160ms ease, box-shadow 160ms ease, text-shadow 160ms ease;
+}
+
+.goTopButton:hover,
+.goTopButton:focus-visible {
+    border-color: var(--brand);
+    box-shadow: 0 0 18px rgba(121, 212, 222, 0.25);
+    text-shadow: 0 0 12px rgba(121, 212, 222, 0.5);
+}
+
+.goTopButton:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+}
+
+.goTopButton svg {
+    width: 17px;
+    height: 17px;
+}
+
+@media (max-width: 520px) {
+    .goTopButton {
+        right: 16px;
+        bottom: 16px;
+    }
+}
