@@ -1,11 +1,50 @@
-import { FiAward, FiCheckCircle, FiGithub, FiMousePointer, FiRefreshCw } from "react-icons/fi";
+import { createElement } from "react";
+import {
+    FiAward,
+    FiCheckCircle,
+    FiCoffee,
+    FiGlobe,
+    FiHeart,
+    FiMail,
+    FiMousePointer,
+    FiRefreshCw,
+} from "react-icons/fi";
+import {
+    FaCodepen,
+    FaFacebookF,
+    FaGithub,
+    FaLinkedinIn,
+    FaPatreon,
+    FaYoutube,
+} from "react-icons/fa6";
 import StarRating from "./starRating";
 import "./App.css";
+
+const footerLinks = [
+    ["Portfolio", "https://www.ashishranjan.net/", FiGlobe],
+    ["GitHub", "https://github.com/a2rp", FaGithub],
+    ["CodePen", "https://codepen.io/ash1198", FaCodepen],
+    ["LinkedIn", "https://www.linkedin.com/in/aashishranjan", FaLinkedinIn],
+    ["Facebook", "https://www.facebook.com/theash.ashish/", FaFacebookF],
+    [
+        "YouTube",
+        "https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1",
+        FaYoutube,
+    ],
+    ["Support", "https://a2rp-donation-page.netlify.app/", FiHeart],
+    ["Buy Me a Coffee", "https://buymeacoffee.com/a2rp", FiCoffee],
+    ["Patreon", "https://patreon.com/a2rp", FaPatreon],
+    ["Email", "mailto:ash.ranjan09@gmail.com", FiMail],
+];
 
 const App = () => (
     <div className="appShell">
         <header className="siteHeader">
-            <a className="brand" href="#main-content" aria-label="Star rating system home">
+            <a
+                className="brand"
+                href="#main-content"
+                aria-label="Star rating system home"
+            >
                 <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
                 <span>
                     <strong>Star Rating</strong>
@@ -23,7 +62,7 @@ const App = () => (
                     aria-label="View project on GitHub"
                     title="View project on GitHub"
                 >
-                    <FiGithub aria-hidden="true" />
+                    <FaGithub aria-hidden="true" />
                     <span>GitHub</span>
                 </a>
             </nav>
@@ -96,15 +135,18 @@ const App = () => (
                 </a>
             </p>
             <div className="footerLinks" aria-label="Social and support links">
-                <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio" title="Portfolio">Web</a>
-                <a href="https://github.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><FiGithub aria-hidden="true" /></a>
-                <a href="https://codepen.io/ash1198" target="_blank" rel="noopener noreferrer" aria-label="CodePen" title="CodePen">CP</a>
-                <a href="https://www.linkedin.com/in/aashishranjan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
-                <a href="https://www.facebook.com/theash.ashish/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
-                <a href="https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">YT</a>
-                <a href="https://a2rp-donation-page.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Support" title="Support">S</a>
-                <a href="https://buymeacoffee.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee" title="Buy Me a Coffee">BC</a>
-                <a href="https://patreon.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Patreon" title="Patreon">P</a>
+                {footerLinks.map(([label, href, Icon]) => (
+                    <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        title={label}
+                    >
+                        {createElement(Icon, { "aria-hidden": true })}
+                    </a>
+                ))}
             </div>
         </footer>
     </div>
