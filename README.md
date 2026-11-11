@@ -13,13 +13,13 @@ A responsive React star rating component with hover preview, keyboard-friendly c
 
 ## Tech stack
 
-React, Create React App, Sass modules, and React Icons.
+React, Vite, Vitest, Sass modules, React Testing Library, and React Icons.
 
 ## Run locally
 
 ~~~
 npm install
-npm start
+npm run dev
 ~~~
 
 ## Deployment
@@ -31,6 +31,7 @@ Build and deploy:
 ~~~
 npm run lint
 npm run build
+npm run test -- --run
 npm run deploy
 ~~~
 

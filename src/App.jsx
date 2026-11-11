@@ -62,7 +62,7 @@ const App = () => {
                     href="#main-content"
                     aria-label="Star rating system home"
                 >
-                    <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
+                    <img src={import.meta.env.BASE_URL + "logo.png"} alt="" />
                     <span>
                         <strong>Star Rating</strong>
                         <small>React component demo</small>
